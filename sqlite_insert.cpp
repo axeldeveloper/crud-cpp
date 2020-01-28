@@ -27,6 +27,8 @@ int main()
     string ADDRESS = "Marques";
     string SALARY  = "9.700";
 
+
+
     
     string sql =
         "INSERT INTO PERSON (NAME, SURNAME, AGE, ADDRESS, SALARY) VALUES ("
