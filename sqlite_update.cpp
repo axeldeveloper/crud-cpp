@@ -37,7 +37,6 @@ int main(int argc, char* argv[]) {
     PERSON p = { 24, "AXL", "Martins", 34,  "Marques de Pombal", 9.900 };
    
 
-  
     /* format SQL  */
     sprintf(SQ, query, p.NAME, p.SURNAME, p.AGE, p.ADDRESS, p.SALARY, p.ID);
 

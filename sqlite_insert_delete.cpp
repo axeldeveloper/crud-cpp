@@ -21,7 +21,7 @@ int main(int argc, char** argv)
 { 
     sqlite3* DB; 
     char* messaggeError; 
-    int exit = sqlite3_open("example.db", &DB); 
+    int exit = sqlite3_open("abeserver.db", &DB); 
     string query = "SELECT * FROM PERSON;"; 
   
     cout << "STATE OF TABLE BEFORE INSERT" << endl; 

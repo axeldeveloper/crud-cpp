@@ -12,6 +12,13 @@ Give examples
 
 ## Demostração de uma crud em c++
 
+> g++ -std=c++17 main.cxx -o main -lsqlite3
+> g++ -o update sqlite_update.cpp -lsqlite3
+> g++ -o update sqlite_update.cpp -lsqlite3
+> g++ sqlite_update.cpp -l sqlite3
+> gcc sqlite_update.cpp -l sqlite3
+
+
 ## Linux
 
 
