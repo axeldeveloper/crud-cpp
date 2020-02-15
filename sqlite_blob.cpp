@@ -103,7 +103,6 @@ int main(int argc, char **argv)
   sqlite3_exec(db, "END", NULL, NULL, NULL);
 
   // Close database
-
   sqlite3_close(db);
   return 0;
 }
