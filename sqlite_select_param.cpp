@@ -19,7 +19,7 @@
 using namespace std;
 
 
-class Person {
+class Persona {
    
     // constructor
     public:
@@ -42,7 +42,7 @@ int main(void) {
    
     int param = 25;
     
-    int rc = sqlite3_open("abeserver.db", &db);
+    int rc = sqlite3_open("DEV.db", &db);
     
     if (rc != SQLITE_OK) {
         
@@ -76,7 +76,7 @@ int main(void) {
         ps << sqlite3_column_text(res, 2);;
         pa << sqlite3_column_text(res, 4);;
 
-        Person person;
+        Persona person;
         person.ID      = sqlite3_column_int(res, 0) ;
         person.NAME    = pn.str();
         person.SURNAME = ps.str();

@@ -12,7 +12,7 @@
 // g++ -o update sqlite_update_prepare_call.cpp -lsqlite3
 // g++ -o update sqlite_update_prepare_call.cpp -lsqlite3
 // g++ sqlite_update_prepare_call.cpp -l sqlite3
-// gcc sqlite_update_prepare_call.cpp -l sqlite3
+
 using namespace std;
 
 
@@ -38,7 +38,7 @@ int main() {
 
     PERSON p = { 24, "AXL", "Martins", 34,  "Marques de Pombal", 9.900 };
   
-    if (sqlite3_open("abeserver.db", &db) == SQLITE_OK)
+    if (sqlite3_open("DEV.db", &db) == SQLITE_OK)
     {
            
         /* Execute SQL statement */

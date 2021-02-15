@@ -13,33 +13,22 @@
     "  SALARY    REAL            \n" \
 	")"
 
-
-std::string sql = "CREATE TABLE PERSON("
-                    "ID INTEGER PRIMARY KEY  AUTOINCREMENT, "
-                    "NAME           TEXT    NOT NULL, "
-                    "SURNAME        TEXT    NOT NULL, "
-                    "AGE            INT     NOT NULL, "
-                    "ADDRESS        CHAR(50), "
-                    "SALARY         REAL );"; 
-
-
-// g++ -std=c++17 sqlite_create_table.cpp -o main -lsqlite3
-// g++ -o update sqlite_create_table.cpp -lsqlite3
-// g++ -o update sqlite_create_table.cpp -lsqlite3
-// g++ sqlite_create_table.cpp -l sqlite3
-// gcc sqlite_create_table.cpp -l sqlite3
-
-
-
 int main(int argc, char** argv) 
 { 
-    
+    // g++ -std=c++17 sqlite_create_table.cpp -o main -lsqlite3
+    // g++ -o update sqlite_create_table.cpp -lsqlite3
+    // g++ sqlite_create_table.cpp -l sqlite3
+    // g++ sqlite_create_table.cpp -o main -lsqlite3
+    // g++ sqlite_create_table.cpp -o create_talbe -lsqlite3
+
+
+
     std::cout << ":) " << PROGRAMA << std::endl;
 
     sqlite3* DB; 
 
     int exit = 0; 
-    exit = sqlite3_open("abeserver.db", &DB); 
+    exit = sqlite3_open("DEV.db", &DB); 
     char* messaggeError; 
     exit = sqlite3_exec(DB, SQL_CREATE_TABLE_PERSON_CONFIG, NULL, 0, &messaggeError); 
   

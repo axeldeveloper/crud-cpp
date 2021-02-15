@@ -10,16 +10,19 @@
 #include "utils.cpp" 
 
 
-// g++ -std=c++17 sqlite_insert_2.cpp -o insert2 -lsqlite3
-// g++ -o insert2 sqlite_insert_2.cpp -lsqlite3
-// g++ -o insert2 sqlite_insert_2.cpp -lsqlite3
-// g++ sqlite_insert_2.cpp -l sqlite3
-// gcc sqlite_insert_2.cpp -l sqlite3
+
 using namespace std;
 
 int main()
 {
    
+    // g++ -std=c++17 sqlite_insert_2.cpp -o insert2 -lsqlite3
+    // g++ sqlite_insert_2.cpp  -o main -lsqlite3
+    // g++ -o insert2 sqlite_insert_2.cpp -lsqlite3
+    // g++ -o insert2 sqlite_insert_2.cpp -lsqlite3
+    // g++ sqlite_insert_2.cpp -l sqlite3
+  
+
     std::cout << ":) " << PROGRAMA << std::endl;
 
     sqlite3 *db;
@@ -36,7 +39,7 @@ int main()
     query = "INSERT INTO PERSON (NAME, SURNAME, AGE, ADDRESS, SALARY) VALUES (?1, ?2, ?3, ?4, ?5);";
     
 
-    if (sqlite3_open("abeserver.db", &db) == SQLITE_OK)
+    if (sqlite3_open("DEV.db", &db) == SQLITE_OK)
     {
         //preparing the statement
         sqlite3_prepare_v2( db, query, strlen(query), &stmt, NULL ); 

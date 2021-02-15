@@ -8,11 +8,7 @@
 #include "sqlite3.h"
 #include "utils.cpp" 
 
-// g++ -std=c++17 sqlite_update_callback.cpp -o main -lsqlite3
-// g++ -o update sqlite_update_callback.cpp -lsqlite3
-// g++ -o update sqlite_update_callback.cpp -lsqlite3
-// g++ sqlite_update_callback.cpp -l sqlite3
-// gcc sqlite_update_callback.cpp -l sqlite3
+
 using namespace std;
 
 
@@ -40,6 +36,13 @@ static int callback(void *data, int argc, char **argv, char **columns){
 //int main(int argc, char* argv[]) {
 int main() {
 
+
+    // g++ -std=c++17 sqlite_update_callback.cpp -o main -lsqlite3
+    // g++ -o update sqlite_update_callback.cpp -lsqlite3
+    // g++ -o update sqlite_update_callback.cpp -lsqlite3
+    // g++ sqlite_update_callback.cpp -l sqlite3
+
+
     std::cout << ":) " << PROGRAMA << std::endl;
     std::cout << "SQLITE VERSION %s\n" <<  sqlite3_libversion() << std::endl; 
 
@@ -63,7 +66,7 @@ int main() {
     /* Create merged SQL statement */
     sprintf(SQ, SQL_UPDATE_ALL_PERSON, p.NAME, p.SURNAME, p.AGE, p.ADDRESS, p.SALARY, p.ID);
    
-    if (sqlite3_open("abeserver.db", &db) == SQLITE_OK)
+    if (sqlite3_open("DEV.db", &db) == SQLITE_OK)
     {       
         /* Execute SQL statement */
         rc = sqlite3_exec(db, SQ, callback, (void*)data,  &zErrMsg);         

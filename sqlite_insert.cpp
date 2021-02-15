@@ -39,7 +39,7 @@ int main()
         + quotesql(SALARY) + ");";
 
 
-    if (sqlite3_open("abeserver.db", &db) == SQLITE_OK)
+    if (sqlite3_open("DEV.db", &db) == SQLITE_OK)
     {
         //preparing the statement
         sqlite3_prepare( db, sql.c_str(), -1, &stmt, NULL ); 

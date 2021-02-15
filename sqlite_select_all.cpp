@@ -10,20 +10,14 @@
 #include <vector>
 #include "utils.cpp"
 
-// g++ -std=c++17 sqlite_select_all.cpp -o main -lsqlite3
-// g++ -o all sqlite_select_all.cpp -lsqlite3
-// g++ -o all sqlite_select_all.cpp -lsqlite3
-// g++ sqlite_select_all.cpp -l sqlite3
-// gcc sqlite_select_all.cpp -l sqlite3
-
 
 using namespace std;
 
 
 //https://github.com/fnc12/sqlite_orm
 
-class Person {
-   
+
+class Persona {
     // constructor
     public:
         int ID;
@@ -37,14 +31,21 @@ class Person {
 
 int main()
 {
+
+
+    // g++ -std=c++17 sqlite_select_all.cpp -o main -lsqlite3
+    // g++ -o all sqlite_select_all.cpp -lsqlite3
+    // g++ -o all sqlite_select_all.cpp -lsqlite3
+    // g++ sqlite_select_all.cpp -l sqlite3
+
     std::cout << ":) " << PROGRAMA << std::endl;
 
     sqlite3 *db;
     sqlite3_stmt *stmt;
-    std::list<Person> listOfPersons;
+    std::list<Persona> listOfPersons;
     
     
-    if (sqlite3_open("abeserver.db", &db) == SQLITE_OK)
+    if (sqlite3_open("DEV.db", &db) == SQLITE_OK)
     {
         sqlite3_prepare(db, "SELECT * from PERSON;", -1, &stmt, NULL ); //preparing the statement
         while(sqlite3_step(stmt) == SQLITE_ROW) 
@@ -56,20 +57,20 @@ int main()
 
             //string try1 = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt,4))); 
 
-            Person person;
+            Persona person;
             person.ID      = sqlite3_column_int(stmt, 0) ;
             person.NAME    = pn.str();
             person.SURNAME = ps.str();
-            person.AGE     = sqlite3_column_int(stmt, 3) ;;
+            person.AGE     = sqlite3_column_int(stmt, 3) ;
             person.ADDRESS = pa.str();
-            person.SALARY  = sqlite3_column_double(stmt, 5);;    
+            person.SALARY  = sqlite3_column_double(stmt, 5);   
             listOfPersons.push_back(person);
         }     
 
             // getting size of the list 
             int size = listOfPersons.size(); 
 
-            for (const Person & row : listOfPersons)
+            for (const Persona & row : listOfPersons)
             {   
                 std::cout << "ID : " << row.ID << " :: " << row.NAME << std::endl;
             }
